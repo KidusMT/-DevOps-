@@ -1,0 +1,1000 @@
+    7  ls
+    8  mv deployment-chatme.yaml deployment-staging.yaml
+    9  ls
+   10  cat deployment-staging.yaml 
+   11  ls
+   12  cd ..
+   13  ls
+   14  cd ..
+   15  ls
+   16  cat Jenkinsfile 
+   17  ls
+   18  cd ..
+   19  gcloud config set compute/zone us-central1-a
+   20  git clone https://github.com/GoogleCloudPlatform/continuous-deployment-on-kubernetes.git
+   21  cd continuous-deployment-on-kubernetes
+   22  gcloud container clusters create jenkins-cd --num-nodes 2 --machine-type n1-standard-2 --scopes "https://www.googleapis.com/auth/source.read_only,cloud-platform" --cluster-version 1.12
+   23  gcloud config set project th-kidusmamuye
+   24  gcloud container clusters create jenkins-cd --num-nodes 2 --machine-type n1-standard-2 --scopes "https://www.googleapis.com/auth/source.read_only,cloud-platform" --cluster-version 1.12
+   25  gcloud container clusters get-credentials jenkins-cd
+   26  kubectl get pods
+   27  ./helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+   28  cd ..
+   29  ls
+   30  ./helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+   31  ./helm init --service-account=tiller
+   32  ./helm update
+   33  ./helm init --service-account=tiller
+   34  ./helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+   35  cp linux-amd64/helm .
+   36  kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)
+   37  kubectl create serviceaccount tiller --namespace kube-system
+   38  kubectl create clusterrolebinding tiller-admin-binding --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+   39  ./helm init --service-account=tiller
+   40  ./helm update
+   41  ./helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+   42  ls
+   43  ./helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+   44  ./helm version
+   45  ./helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+   46  ls
+   47  cd continuous-deployment-on-kubernetes/
+   48  ls
+   49  cp ../helm .
+   50  ls
+   51  ./helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+   52  kubectl get pods
+   53  ls
+   54  pwd
+   55  ls
+   56  cd k8s-templets/
+   57  ls
+   58  git remote -v
+   59  git remote set-url origin http://git.gebeya.com/devops/k8s-templets.git
+   60  git remote -v
+   61  git pull origin
+   62  pwd
+   63  ls
+   64  cat Jenkins
+   65  cat Jenkinsfile 
+   66  ls
+   67  cd ..
+   68  ls
+   69  cd ng2-auth-server/
+   70  ls
+   71  ls
+   72  cd ng2-auth-server/
+   73  ls
+   74  cat Jenkins
+   75  cat Jenkinsfile 
+   76  ls
+   77  mv Jenkinsfile ../
+   78  ls
+   79  cd ..
+   80  ls
+   81  cd ..
+   82  ls
+   83  cd kidusmamuye/
+   84  ls
+   85  cd k8s-templets/
+   86  ls
+   87  mv Jenkinsfile ../ng2-auth-server/
+   88  ls
+   89  cd ..
+   90  ls
+   91  cd ng2-auth-server/
+   92  ls
+   93  cd ..
+   94  ls
+   95  cat Jenkinsfile 
+   96  ls
+   97  cat Jenkinsfile 
+   98  cd ng2-auth-server/
+   99  ls
+  100  vi Jenkins
+  101  vi Jenkinsfile 
+  102  ls
+  103  cat Jenkinsfile 
+  104  ls
+  105  git remote -
+  106  git remote -v
+  107  git remote set-url origin http://git.gebeya.com/kidusm/ng2-auth-server.git
+  108  git remote -v
+  109  git push origin master
+  110  git add .
+  111  git commit -m "changed the jenkins file configuration"
+  112  git config --global user.email "kidusmamuye@gmail.com"
+  113  git config --global user.name "kidusmt"
+  114  git commit -m "changed the jenkins file configuration"
+  115  git push origin master
+  116  gcloud container clusters get-credentials jenkins-cd --zone us-central1-a --project th-kidusmamuye
+  117  kubectl get services
+  118  kubect get pods
+  119  kubect get pod
+  120  kubectl get pods
+  121  kubectl get services
+  122  kubectl edit service cd-jenkins
+  123  kubectl get services
+  124  printf $(kubectl get secret cd-jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
+  125  kubectl get service
+  126  kubectl get pods
+  127  kubectl get ns
+  128  ls
+  129  pwd
+  130  ls
+  131  cd ng2-auth-server/
+  132  LS
+  133  Ls
+  134  ls
+  135  kubectl get services
+  136  kubectl get pods
+  137  kubectl get deployment
+  138  kubectl get ns
+  139  docker images
+  140  ls
+  141  gcloud config set project th-kidusmamuye
+  142  docker build -t gcr.io/th-kidusmamuye/chatme:v1 .
+  143  gcloud config info
+  144  gcloud config view
+  145  gcloud config list
+  146  docker images
+  147  gcloud docker -- push gcr.io/th-kidusmamuye/chatme:v1
+  148  kubectl create ns chatme
+  149  kubectl get ns
+  150  echo -n "mongodb://10.142.0.4:27017/chatme" | base64
+  151  ls
+  152  cd ..
+  153  ls
+  154  cat secret.yaml 
+  155  kubectl get ns
+  156  kubectl get pods --namespace=chatme
+  157  kubectl get pods
+  158  kubens
+  159  git clone https://github.com/ahmetb/kubectx $WORKDIR/kubectx
+  160  kubectl describe deployment
+  161  git clone https://github.com/ahmetb/kubectx.git
+  162  ls
+  163  cd kubectx/
+  164  ls
+  165  kubectx
+  166  ./kubectx
+  167  ./kubens
+  168  ls
+  169  cat secret.yaml 
+  170  kubectl get secret.yaml 
+  171  kubectl get secret
+  172  kubectl get secret ns chatme
+  173  kubectl get secret chatme
+  174  kubectl get chatme secret
+  175  kubectl get secret
+  176  kubectl get secret -n chatme
+  177  history
+  178  vi secret.yaml 
+  179  cat secret.yaml 
+  180  kubectl create -f ./secret.yaml -n chatme --validate=false
+  181  kubectl get secret -n chatme
+  182  ls
+  183  cd ng2-auth-server/
+  184  ls
+  185  git remote -v
+  186  ls
+  187  cd ..
+  188  ls
+  189  cd k
+  190  cd k8s-templets/
+  191  ls
+  192  cp sample-ingress.yaml ../ng2-auth-server/
+  193  ls
+  194  cd ..
+  195  ls
+  196  cd ng2-auth-server/
+  197  ls
+  198  cat sample-ingress.yaml 
+  199  ls
+  200  vi sample-ingress.yaml 
+  201  kubectl apply -f ./sample-ingress.yaml 
+  202  kubectl get ingress
+  203  kubectl describe ingress
+  204  kubectl apply -f ./sample-ingress.yaml -n chatme
+  205  kubectl get ingress -n chatme
+  206  kubectl describe ingress -n chatme
+  207  cat sample-ingress.yaml 
+  208  ls
+  209  vi sample-ingress.yaml 
+  210  kubectl describe ingress -n chatme
+  211  kubectl apply -f ./sample-ingress.yaml -n chatme
+  212  kubectl describe ingress -n chatme
+  213  vi sample-ingress.yaml 
+  214  kubectl apply -f ./sample-ingress.yaml -n chatme
+  215  kubectl describe ingress -n chatme
+  216  kubectl get ingress -n chatme
+  217  ls
+  218  cd ng2-auth-server/
+  219  ls
+  220  cat sample-ingress.yaml 
+  221  ls
+  222  cat Jenkinsfile 
+  223  ls
+  224  cd k8s/
+  225  ls
+  226  kubectl get deployment
+  227  kubectl get deployments
+  228  kubectl get svc
+  229  kubectl get svc -n chatme
+  230  kubectl get deployments -n deplyment
+  231  kubectl get deployments -n deplyments
+  232  kubectl get deployments -n deployments
+  233  kubectl get deployments -n deployment
+  234  kubectl get deployments -n chatme
+  235  kubectl describe ingress -n chatme
+  236  ls
+  237  cd services/
+  238  ls
+  239  cat frontend.yaml 
+  240  cd ..
+  241  ls
+  242  cd cat
+  243  cd chatme/
+  244  ls
+  245  cat deployment-staging.yaml 
+  246  cd ..
+  247  ls
+  248  cat tsconfig.json 
+  249  ls
+  250  clear
+  251  history
+  252  gcloud container clusters get-credentials jenkins-cd --zone us-central1-a --project th-kidusmamuye
+  253  ls
+  254  pwd
+  255  ls -la
+  256  docker info
+  257  kubectl config view
+  258  ls
+  259  cat Jenkinsfile 
+  260  docker images
+  261  docker ps
+  262  docker ps -a
+  263  docker ps a
+  264  kubectl ns
+  265  kubectl get ns
+  266  kubectl get deployment ns chatme
+  267  kubectl get deployments ns chatme
+  268  kubectl get deployment
+  269  kubectl describe deployment n chatme
+  270  kubectl describe deployment -n chatme
+  271  kubectl get ns
+  272  kubectl get secret
+  273  ls
+  274  pwd
+  275  cd ng2-auth-server/
+  276  ls
+  277  git remote -v
+  278  kubectl get pod
+  279  kubectl get pods
+  280  gcloud auth login
+  281  kubectl get pods
+  282  kubectl describe deployment
+  283  kubectl describe deployment -n chatme
+  284  kubectl get pods
+  285  kubectl get deployments
+  286  kubectl get pods -n chatme
+  287  kubectl get deployments -n chatme
+  288  kubectl describe deployments -n chatme
+  289  ls
+  290  cd ng2-auth-server/
+  291  ls
+  292  cat Dockerfile 
+  293  ls
+  294  cat Jenkins
+  295  cat Jenkinsfile
+  296  ls
+  297  ls -la
+  298  cat sample-ingress.yaml 
+  299  git status
+  300  git add .
+  301  git status
+  302  git push origin master
+  303  git pull origin master
+  304  git status
+  305  git add .
+  306  git status
+  307  git commit -m "inserted sample-ingress.yaml file"
+  308  git status
+  309  git push origin master
+  310  git status
+  311  cat sample-ingress.yaml 
+  312  kubectl get services
+  313  kubectl get services -n chatme
+  314  kubectl get pods -n chatme
+  315  kubectl describe pods -n chatme
+  316  kubectl get pods -n chatme
+  317  ppwd
+  318  pwd
+  319  ls
+  320  ls -ls
+  321  kubectl get pods
+  322  kubectl get pods -n chatme
+  323  kubectl get deployment -n chatme
+  324  kubectl describe deployment -n chatme
+  325  kubectl get pods
+  326  kubectl get pods -n chatme
+  327  kubectl get deployment
+  328  kubectl get services
+  329  kubectl get services -n chatme
+  330  history
+  331  kubectl expose deployment chatme --type=LoadBalancer --port 3000 --target-port 3000
+  332  kubectl get deployment
+  333  kubectl get deployment -n chatme
+  334  kubectl expose deployment chatme --type=LoadBalancer --port 3000 --target-port 3000 -n chatme
+  335  kubectl get deployment -n chatme
+  336  kubectl get services -n chatme
+  337  kubectl get pods -n chatme
+  338  kubectl logs chatme-7649cdfdd5-64ngc -n chatme
+  339  kubectl get secrete 
+  340  kubectl get secret
+  341  kubectl get secret -n chatme
+  342  kubectl get secret
+  343  kubectl get secret -n chatme
+  344  cat secret.yaml 
+  345  kubectl get pods
+  346  kubectl get pods -n chatme
+  347  cat secret.yaml 
+  348  echo –n “mongodb://10.128.0.6,10.128.0.7:27017/db_name?replicaSet=rs0” |
+  349  echo –n “mongodb://10.142.0.4:27017/ChatMe?replicaSet=rs0” | base64
+  350  echo –n “mongodb://10.142.0.4:27017/Chatme?replicaSet=rs0” | base64
+  351  echo –n “mongodb://10.142.0.4:27017/Chatme” | base64
+  352  ls
+  353  cat secret.yaml 
+  354  ls
+  355  mongo mongodb://10.142.0.4
+  356  mongo mongodb://104.196.192.55
+  357  kubectl get pods
+  358  gcloud auth login
+  359  gcloud config set project th-kidusmamuye
+  360  kubectl get pods
+  361  kubectl get pods -n chatme
+  362  kubectl get service -n chatme
+  363  kubectl get deployment -n chatme
+  364  ls
+  365  cd ng2-auth-server/
+  366  ls
+  367  cat sample-ingress.yaml 
+  368  kubectl get deployments
+  369  kubectl get deployments -n chatme
+  370  vi sample-ingress.yaml 
+  371  curl http://35.225.215.196:3000/
+  372  kubectl get deployments -n chatme
+  373  kubectl describe deployments -n chatme
+  374  kubectl describe services -n chatme
+  375  cat sample-ingress.yaml 
+  376  kubectl create -f sample-ingress.yaml -n chatme
+  377  kubectl delete -f sample-ingress.yaml -n chatme
+  378  kubectl create -f sample-ingress.yaml -n chatme
+  379  kubectl get deployments
+  380  kubectl get services -n chatme
+  381  kubectl stop service chatme -n chatme
+  382  kubectl delete service chatme -n chatme
+  383  kubectl get services -n chatme
+  384  history
+  385  ls
+  386  kubectl get services
+  387  kubectl get services -n chatme
+  388  kubectl get services -n chatme
+  389  history
+  390  cd ng2-auth-server/
+  391  cat sample-ingress.yaml 
+  392  kubectl expose deployment chatme-service --type=LoadBalancer --port 3000 --target-port 3000
+  393  kubectl get deployments
+  394  kubectl get deployments -n chatme
+  395  kubectl expose deployment chatme --type=LoadBalancer --port 3000 --target-port 3000
+  396  kubectl expose deployment chatme-service --type=LoadBalancer --port 3000 --target-port 3000 -n chatme
+  397  kubectl expose deployment chatme --type=LoadBalancer --port 3000 --target-port 3000 -n chatme
+  398  kubectl get deployments -n chatme
+  399  kubectl get services -n chatme
+  400  kubectl delete service chatme-service -n chatme
+  401  kubectl get services -n chatme
+  402  ls
+  403  kubectl get serices
+  404  kubectl get svc -n chatme
+  405  vi sample-ingress.yaml 
+  406  history
+  407  kubectl create -f sample-ingress.yaml -n chatme
+  408  kubectl delete -f sample-ingress.yaml -n chatme
+  409  kubectl create -f sample-ingress.yaml -n chatme
+  410  kubectl get svc
+  411  kubectl get svc -n chatme
+  412  cat sample-ingress.yaml 
+  413  kubectl get svc 0n chatme
+  414  kubectl get svc -n chatme
+  415  cat sample-ingress.yaml 
+  416  kubectl --namespace=chatme apply -f k8s/chatme
+  417  cd ng2-auth-server/
+  418  kubectl --namespace=chatme apply -f k8s/chatme
+  419  kubectl get pods
+  420  kubectl get pods -n chatme
+  421  kubectl get svc -n chatme
+  422  kuectl logs chatme 
+  423  kubectl logs chatme 
+  424  kubectl get pods -n chatme 
+  425  kubectl logs chatme-6657c4ff4b-stggv 
+  426  kubectl logs chatme-6657c4ff4b-stggv -n chatme 
+  427  kubectl get pods -n chatme 
+  428  kubectl logs chatme-65db9d6989-px4rf -n chatme 
+  429  kubectl get svc -n chatme 
+  430  curl 35.225.215.196:3000 
+  431  kubectl get svc -n chatme 
+  432  ls
+  433  pwd
+  434  ls
+  435  kubectl get ns
+  436  gcloud auth login
+  437  gcloud config set project th-kidusmamuye
+  438  pwd
+  439  ls
+  440  kubectl get ns
+  441  ls
+  442  kubectl get pods
+  443  kubectl get ns
+  444  pwd
+  445  ls
+  446  ls -la
+  447  git clone http://git.gebeya.com/SewochDev/sewoch_api.git
+  448  ls
+  449  cd sewoch_api/
+  450  ls
+  451  cat Dockerfile 
+  452  cd ..
+  453  ls
+  454  cd sewoch_api/
+  455  ls -ls
+  456  kubectl create ns sewoch
+  457  kubectl get ns
+  458  ls
+  459  cd k8s/
+  460  ls
+  461  cd se
+  462  cd sewoch/
+  463  ls
+  464  cat deployment-staging.yaml 
+  465  ls
+  466  history
+  467  echo -n "mongodb://10.142.0.4:27017/sewoch" | base64
+  468  cd ..
+  469  ls
+  470  cd ..
+  471  ls
+  472  cd ..
+  473  ls
+  474  history
+  475  echo -n "mongodb://10.142.0.4:27017/sewoch" | base64
+  476  vi lending_platform_secret.yaml 
+  477  cat lending_platform_secret.yaml 
+  478  ls
+  479  cd ng2-auth-server/
+  480  ls
+  481  cat k8s/
+  482  ls
+  483  cd k8s/
+  484  ls
+  485  cd cat
+  486  cd chatme/
+  487  ls
+  488  cat deployment-staging.yaml 
+  489  cd ..
+  490  ls
+  491  kubectl get deployment -n chatme
+  492  kubectl get deployment -n sewoch
+  493  kubectl describe deployment -n sewoch
+  494  ls
+  495  cd ..
+  496  ls
+  497  mv lending_platform_secret.yaml sewoch_secret.yaml
+  498  ls
+  499  history
+  500  kubectl create -f ./sewoch_secret.yaml -n sewoch --validate=false
+  501  kubectl get secrete
+  502  kubectl get secret
+  503  kubectl get secret -n sewoch
+  504  ls
+  505  cd sewoch_api/
+  506  ls
+  507  kubectl create -f ./k8s/sewoch/deployment-staging.yaml 
+  508  kubectl create -f ./k8s/sewoch/deployment-staging.yaml -n sewoch
+  509  kubectl get deployment -n sewoch
+  510  kubectl create -f ./k8s/services/frontend.yaml -n sewoch
+  511  kubectl get deployment -n sewoch
+  512  kubectl describe deployment -n sewoch
+  513  kubectl get svc -n sewoch
+  514  kubectl expose deployment sewoch --type=LoadBalancer --port 3000 --target-port 3000 -n sewoch
+  515  kubectl get deplyment -n sewoch
+  516  kubectl get deployment -n sewoch
+  517  kubectl get scv -n sewoch
+  518  kubectl get svc -n sewoch
+  519  ls
+  520  cd ..
+  521  ls
+  522  cd ng2-auth-server/
+  523  ls
+  524  cat sample-ingress.yaml 
+  525  cp sample-ingress.yaml sewoch_api
+  526  ls
+  527  cd sewoch_api
+  528  ls
+  529  cd sewoch_api
+  530  cd ..
+  531  ls
+  532  cd sewoch_api/
+  533  ls
+  534  cd ..
+  535  ls
+  536  cd ng2-auth-server/
+  537  ls
+  538  cp sample-ingress.yaml ./../sewoch_api/
+  539  ls
+  540  cd ../sewoch_api/
+  541  ls
+  542  cat sample-ingress.yaml 
+  543  vi sample-ingress.yaml 
+  544  kubectl get svc -n sewoch
+  545  vi sample-ingress.yaml 
+  546  ls
+  547  kubectl get svc -n chatme
+  548  kubectl get deployment -n chatme
+  549  kubectl get deployment -n sewoch
+  550  kubectl get pods -n chatme
+  551  kubectl get deployment -n sewoch
+  552  kubectl get pods -n sewoch
+  553  history
+  554  kubectl get pods -n sewoch
+  555  kubectl get secreate -n sewoch
+  556  kubectl get secret -n sewoch
+  557  kubectl get deployment -n sewoch
+  558  kubectl describe deployment -n sewoch
+  559  kubectl apply -f ./sample-ingress.yaml -n sewoch
+  560  kubectl get pods
+  561  kubectl get pods -n sewoch
+  562  kubectl get svc -n sewoch
+  563  kubectl logs sewoch
+  564  kubectl logs sewoch-7f4569867-pkbgv
+  565  kubectl logs sewoch-7f4569867-pkbgv -n sewoch
+  566  ls
+  567  history
+  568  kubectl create -f ./sewoch_secret.yaml -n sewoch
+  569  ls
+  570  cd ..
+  571  ls
+  572  kubectl create -f ./sewoch_secret.yaml -n sewoch
+  573  kubectl delete secret -f ./sewoch_secret.yaml -n sewoch
+  574  kubectl delete secret ./sewoch_secret.yaml -n sewoch
+  575  kubectl delete secret -n sewoch
+  576  kubectl delete secret sewoch_secret.yaml -n sewoch
+  577  kubectl get secret -n sewoch
+  578  kubectl delete secret mongod-secret -n sewoch
+  579  cd ..
+  580  ls
+  581  cd kidusmamuye/
+  582  ls
+  583  cat sewoch_secret.yaml 
+  584  echo –n “mongodb://10.142.0.4:27017/sewoch?replicaSet=rs0” | base64
+  585  echo –n “mongodb://10.142.0.4:27017/sewoch” | base64
+  586  ls
+  587  vi sewoch_secret.yaml 
+  588  cat sewoch_secret.yaml 
+  589  kubectl create -f ./sewoch_secret.yaml -n sewoch --validate=false
+  590  kubectl get deployment -n sewoch
+  591  kubectl delete deployment sewoch -n sewoch
+  592  kubectl create -f ./k8s/sewoch/deployment-staging.yaml -n sewoch
+  593  kubectl create -f ./sewoch_api/k8s/sewoch/deployment-staging.yaml -n sewoch
+  594  kubectl get deployments
+  595  kubectl get deployments -n sewoch
+  596  kubectl expose deployment sewoch --type=LoadBalancer --port 3000 --target-port 3000 -n sewoch
+  597  kubectl get svc -n sewoch
+  598  kubectl get deployment -n sewoch
+  599  kubectl delete svc sewoch -n sewoch
+  600  kubectl delete svc sewoch-service -n sewoch
+  601  kubectl create -f ./sewoch_api/k8s/services/frontend.yaml -n sewoch
+  602  kubectl get svc -n sewoch
+  603  kubectl expose deployment sewoch --type=LoadBalancer --port 3000 --target-port 3000 -n sewoch
+  604  kubectl get svc -n sewoch
+  605  kubectl get secret -n sewoch
+  606  kubectl get pods -n sewoch
+  607  kubectl logs sewoch-7f5bfb8b64-8d9jp -n sewoch -f
+  608  kubectl get pods
+  609  kubectl ctl
+  610  kubectl get secret 
+  611  kubectl get secret -n sewoch
+  612  kubectl describe secret -n sewoch
+  613  kubectl get secret -n sewoch
+  614  kubectl get pods -n sewoch
+  615  kubectl logs sewoch-7f5bfb8b64-8d9jp -n sewoch
+  616  cat sewoch_secret.yaml 
+  617  echo "4oCTbiDigJxtb25nb2RiOi8vMTAuMTQyLjAuNDoyNzAxNy9zZXdvY2jigJ0K" | base64 --decode 
+  618  echo "mongodb://10.142.0.4:27017/sewoch" | base64 
+  619  echo "bW9uZ29kYjovLzEwLjE0Mi4wLjQ6MjcwMTcvc2V3b2NoCg==" | base64 --decode 
+  620  ls
+  621  vi sewoch_secret.yaml 
+  622  ls
+  623  kubectl get pods -n sewoch
+  624  kubectl detele pod sewoch-7f5bfb8b64-8d9jp -n sewoch
+  625  kubectl detele pods sewoch-7f5bfb8b64-8d9jp -n sewoch
+  626  kubectl delete pod sewoch-7f5bfb8b64-8d9jp -n sewoch
+  627  kubectl get pods -n sewoch
+  628  history
+  629  kubectl create -f ./sewoch_secret.yaml -n sewoch
+  630  kubectl delete secret mongod-secret -n sewoch
+  631  kubectl create -f ./sewoch_secret.yaml -n sewoch
+  632  kubectl delete pod sewoch-7f5bfb8b64-8d9jp -n sewoch
+  633  kubectl get pods -n sewoch
+  634  kubectl delete pod sewoch-7f5bfb8b64-84jn5 -n sewoch
+  635  kubectl get pods -n sewoch
+  636  kubectl get deployment -n sewoch
+  637  kubectl get pods -n sewoch
+  638  cat sewoch_secret.yaml
+  639  kubectl get secret -n sewoch
+  640  kubectl desribe secret -n sewoch
+  641  kubectl describe secret -n sewoch
+  642  kubectl describe secret monogo-secret -n sewoch
+  643  kubectl describe secret mongod-secret -n sewoch
+  644  kubectl describe secret -n chatme
+  645  cat ./sewoch_secret.yaml 
+  646  vi ./sewoch_secret.yaml 
+  647  kubectl create -f ./sewoch_secret.yaml -n sewoch
+  648  kubectl get pods -n sewoch
+  649  kubectl get ingress -n sewoch
+  650  kubectl get svc -n sewoch
+  651  cd sewoch_api/
+  652  kubectl get svc -n chatme
+  653  kubectl edit svc sewoch-servie -n sewoch 
+  654  kubectl edit svc sewoch-service -n sewoch 
+  655  kubectl get svc -n sewoch
+  656  kubectl get pods -n sewoch
+  657  kubectl logs sewoch-6666bbcc4d-6zs4x -n sewoch
+  658  kubectl get pods -n sewoch
+  659  history
+  660  kubectl get pods -n sewoch
+  661  kubectl describe pods -n sewoch
+  662  kubectl get pods -n sewoch
+  663  kubectl logs sewoch-776bc7ccbc-9l4cw -n sewoch
+  664  kubectl delete pods sewoch-776bc7ccbc-9l4cw -n sewoch
+  665  kubectl get pods -n sewoch
+  666  kubectl get deployment -n sewoch
+  667  kubectl get ingress -n sewoch
+  668  kubectl get ingress -n chatme
+  669  kubectl get deployment -n chatme
+  670  kubectl describe deployment -n sewoch
+  671  kubectl get pods -n sewoch
+  672  kubectl get svc -n chatme
+  673  kubectl get svc -n sewoch
+  674  ls
+  675  kubectl get pods -n sewoch
+  676  kubectl logs sewoch-7998b95485-8mvbs -n sewoch
+  677  kubectl get volume
+  678  kubectl get volumes
+  679  kubectl get pods -n sewoch
+  680  kubectl logs sewoch-7998b95485-8mvbs -n sewoch
+  681  kubectl get secret -n sewoch
+  682  ls
+  683  cd sewoch_api/
+  684  ls
+  685  cat k8s/sewoch/deployment-staging.yaml 
+  686  kubectl get deployment -n sewoch
+  687  kubectl describe deployment -n sewoch
+  688  cat ../sewoch_secret.yaml 
+  689  echo 'bW9uZ29kYjovLzEwLjE0Mi4wLjQ6MjcwMTcvc2V3b2NoCg==' | base64 --decode
+  690  cat ../secret.yaml 
+  691  echo 'bW9uZ29kYjovLzEwLjE0Mi4wLjQ6MjcwMTcvY2hhdG1l' | base64 --decode
+  692  kubectl describe deployment -n sewoch
+  693  kubectl edit deployment -n sewoch
+  694  kubectl get pods -n sewoch
+  695  kubectl get service -n sewoch
+  696  kubectl get deployment -n sewoch
+  697  kubectl describe deployment -n sewoch
+  698  kubectl get secret -n sewoch
+  699  kubectl describe secret -n sewoch
+  700  kubectl get secret -n sewoch
+  701  kubectl get secret -n chatme
+  702  kubectl get pods -n sewoch
+  703  kubectl logs sewoch-7d477c989d-mhbhw -n sewoch
+  704  cat ../sewoch_secret.yaml 
+  705  cat ../secret.yaml 
+  706  vi ../sewoch_secret.yaml 
+  707  cat ../sewoch_secret.yaml 
+  708  cat ../secret.yaml 
+  709  history
+  710  kubectl get secret -n sewoch
+  711  kubectl detele secret mongo-secret -n sewoch
+  712  kubectl delete secret mongo-secret -n sewoch
+  713  kubectl delete secret mongod-secret -n sewoch
+  714  kubectl get secret -n sewoch
+  715  kubectl create -f ./sewoch_secret.yaml -n sewoch
+  716  kubectl create -f ../sewoch_secret.yaml -n sewoch
+  717  kubectl get deployment -n sewoch
+  718  kubectl edit deployment -n sewoch
+  719  kubectl get secret -n sewoch
+  720  kubectl edit deployment -n sewoch
+  721  kubectl get pods -n sewoch
+  722  kubectl get svc -n sewoch
+  723  kubectl delete sewoch -n sewoch
+  724  kubectl delete sewoch -n sewoch --all
+  725  kubectl delete svc -n sewoch --all
+  726  kubectl get svc -n sewoch
+  727  kubectl get pods -n sewoch
+  728  kubectl get deployment -n sewoch
+  729  kubectl delete deployment sewoch -n sewoch
+  730  kubectl get ingress -n sewoch
+  731  history
+  732  kubectl create -f ./k8s/sewoch/deployment-staging.yaml -n sewoch
+  733  kubectl create -f ./k8s/services/frontend.yaml -n sewoch
+  734  kubectl expose deployment sewoch --type=LoadBalancer --port 3000 --target-port 3000 -n sewoch
+  735  kubectl get pods -n sewoch
+  736  kubectl get svc -n sewoch
+  737  kubectl get deployment -n sewoch
+  738  kubectl expose deployment sewoch --type=LoadBalancer --port 3000 --target-port 3000 -n sewoch
+  739  kubectl get deployment -n sewoch
+  740  kubectl get svc -n sewoch
+  741  kubectl get svc -n chatme
+  742  kubectl get deployment -n sewoch
+  743  kubectl get svc -n sewoch
+  744  kubectl edit svc -n sewoch
+  745  kubectl get svc -n sewoch
+  746  kubectl get pods -n sewoch
+  747  ls
+  748  kubectl get pods
+  749  kubectl get pods -n sewoch
+  750  kubectl logs sewoch-576b4dbd66-2tnmh -n sewoch
+  751  kubectl get secret -n sewoch
+  752  kubectl get deployment -n sewoch
+  753  kubectl desribe deployment -n sewoch
+  754  kubectl describe deployment -n sewoch
+  755  kubectl get secret -n sewoch
+  756  kubectl edit secret -n sewoch
+  757  ls
+  758  cat sewoch_secret.yaml 
+  759  echo "bW9uZ29kYjovLzEwLjE0Mi4wLjQ6MjcwMTcvc2V3b2No" | base64 --decode
+  760  cat sewoch_secret.yaml 
+  761  kubectl get pods -n sewoch
+  762  kubectl logs sewoch-568b747949-tgwl6 -n sewoch
+  763  ls
+  764  gcloud config set compute/zone us-east1-d
+  765  git clone http://git.gebeya.com/kidusm/thenodejs.git
+  766  ls
+  767  cd thenodejs/
+  768  ls
+  769  cat Jenkinsfile 
+  770  gcloud container clusters create jenkins-cd --num-nodes 2 --machine-type n1-standard-2 --scopes "https://www.googleapis.com/auth/source.read_write,cloud-platform" \
+  771  gcloud container clusters create thenodejs --num-nodes 2 --machine-type n1-standard-2 --scopes "https://www.googleapis.com/auth/source.read_write,cloud-platform" --cluster-version 1.12
+  772  gcloud config set project th-kidusmamuye
+  773  gcloud container clusters create thenodejs --num-nodes 2 --machine-type n1-standard-2 --scopes "https://www.googleapis.com/auth/source.read_write,cloud-platform" --cluster-version 1.12
+  774  gcloud container clusters get-credentials thenodejs
+  775  kubectl get pods
+  776  kubectl create namespace devops-final
+  777  kubectl get ns
+  778  kubectl create namespace jenkins
+  779  kubectl get pods
+  780  kubectl get ns
+  781  gcloud container clusters list
+  782  kubectl get namespace kube-system -o jsonpath='{.metadata.uid}'
+  783  gcloud beta container memberships describe d48be9ef-0544-11ea-9a73-42010af00101
+  784  wget https://storage.googleapis.com/kubernetes-helm/helm-v2.14.1-linux-amd64.tar.gz
+  785  ls
+  786  ls -lah
+  787  s
+  788  ls
+  789  cd k8s/
+  790  ls
+  791  cd ..
+  792  ls
+  793  cd k8s/
+  794  ls
+  795  cd ..
+  796  git status
+  797  git pull origin master
+  798  git status
+  799  ls
+  800  mv helm-v2.14.1-linux-amd64.tar.gz ../
+  801  ls
+  802  cd k8s/
+  803  ls
+  804  cd ..
+  805  ls
+  806  kubectl get ns
+  807  ./helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait -n jenkins
+  808  ls
+  809  tar zxfv helm-v2.14.1-linux-amd64.tar.gz
+  810  cp linux-amd64/helm .
+  811  kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)
+  812  kubectl create serviceaccount tiller --namespace jenkins
+  813  kubectl create clusterrolebinding tiller-admin-binding --clusterrole=cluster-admin --serviceaccount=jenkins:tiller
+  814  ./helm init --service-account=tiller
+  815  ./helm update
+  816  ./helm version
+  817  helm init
+  818  helm version
+  819  helm version --tiller-namespace jenkins
+  820  helm version 
+  821  helm version --tiller-namespace jenkins:tiller
+  822  ./helm init --service-account=tiller
+  823  helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+  824  helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait --tiller-namespace jenkins
+  825  helm --tiller-namespace tiller  version
+  826  helm --tiller-namespace jenkins  version
+  827  kubectl get pods
+  828  kubectl get pods -n jenkins
+  829  kubectl get ns
+  830  ls
+  831  helm --tiller-namespace jenkins install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wai
+  832  helm --tiller-namespace jenkins install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+  833  kubectl get all --all-namespaces | grep tiller
+  834  kubectl delete deployment tiller-deploy -n kube-system
+  835  kubectl delete service tiller-deploy -n kube-system
+  836  kubectl get all --all-namespaces | grep tiller
+  837  helm init
+  838  kubectl get all --all-namespaces | grep tiller
+  839  kubectl create serviceaccount --namespace kube-system tiller
+  840  kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+  841  kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+  842  kubectl get all --all-namespaces | grep tiller
+  843  ls
+  844  history
+  845  kubectl get all --all-namespaces | grep tiller
+  846  helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+  847  helm version
+  848  ls
+  849  cd continuous-deployment-on-kubernetes/
+  850  ls
+  851  kubectl get ns
+  852  helm install -n jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+  853  helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait -n jenkins
+  854  kubectl get pods
+  855  kubectl get pods -n jenkins
+  856  kubectl get pods
+  857  kubectl get pods -n jenkins
+  858  kubectl -n kube-system
+  859  kubectl get pods -n kube-system
+  860  history
+  861  kubectl get pods -n kube-system
+  862  helm ls
+  863  kubectl create serviceaccount tiller --namespace jenkins
+  864  kubectl get all --all-namespaces | grep tiller
+  865  kubectl delete deployment tiller-deploy -n kube-system
+  866  kubectl delete service tiller-deploy -n kube-system
+  867  kubectl get all --all-namespaces | grep tiller
+  868  kubectl create serviceaccount tiller --namespace jenkins
+  869  kubectl get serviceaccount -n kube-system tiller -o yaml
+  870  kubectl edit serviceaccount -n kube-system tiller -o yaml
+  871  kubectl edit serviceaccount -n jenkins tiller -o yaml
+  872  kubectl create serviceaccount tiller --namespace jenkins
+  873  history
+  874  kubectl get all --all-namespaces | grep tiller
+  875  helm init --service-account=tiller --namespace jenkins
+  876  helm init --service-account=tiller -n jenkins
+  877  helm init --tiller-namespace jenkins --tiller-service-account tiller
+  878  helm init --tiller-namespace jenkins --service-account tiller
+  879  kubectl get all --all-namespaces | grep tiller
+  880  kubectl get pods -n jenkins
+  881  ls
+  882  helm update
+  883  helm version
+  884  kubectl get pods -n jenkins
+  885  helm ls
+  886  helm install -n cd stable/jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+  887  kubectl get pods --namespace jenkins
+  888  helm install -n jenkins -f jenkins/values.yaml --version 1.2.2 --wait
+  889  helm --tiller-namespace tiller  version
+  890  kubectl get all --all-namespaces | grep tiller
+  891  kubectl delete deployment tiller-deploy -n kube-syst
+  892  kubectl delete deployment tiller-deploy -n kube-system
+  893  kubectl get pods -n jenkins
+  894  cd ..
+  895  ls
+  896  cat secret.yaml 
+  897  echo "bW9uZ29kYjovLzEwLjE0Mi4wLjQ6MjcwMTcvY2hhdG1l" | base64 --decode
+  898  kubectl get deployment 
+  899  kubectl get deployment -n devops-final 
+  900  ls
+  901  cd thenodejs/
+  902  ls
+  903  echo –n “mongodb://10.142.0.4:27017” | base64
+  904  ls
+  905  cd ..
+  906  ls
+  907  cp secret.yaml thenodejs/
+  908  cd thenodejs/
+  909  ls
+  910  vi secret.yaml 
+  911  ls
+  912  kubectl create -f ./secret.yaml -n devops-final
+  913  kubectl get secret -n devops-final
+  914  kubectl create -f ./k8s/thenodejs/deployment-staging.yaml -n devops-final
+  915  kubectl get deployment -n devops-final
+  916  kubectl get svc -n devops-final
+  917  kubectl create -f ./k8s/services/frontend.yaml -n devops-final
+  918  kubectl get svc -n devops-final
+  919  kubectl expose deployment thenodejs-service --type=LoadBalancer --port 3000 --target-port 3000 -n devops-final
+  920  kubectl expose deployment thenodejs --type=LoadBalancer --port 3000 --target-port 3000 -n devops-final
+  921  kubectl get svc -n devops-final
+  922  kubectl get deployment -n devops-final
+  923  kubectl get svc -n devops-final
+  924  kubectl get deployment -n devops-final
+  925  kubectl get pods -n devops-final
+  926  kubectl logs thenodejs-6b466d9cdd-xpk4l -n devops-final
+  927  ls
+  928  kubectl logs thenodejs-6b466d9cdd-xpk4l -n devops-final
+  929  \
+  930  kubectl logs thenodejs-6b466d9cdd-xpk4l -n devops-final
+  931  gcloud container clusters get-credentials thenodejs --zone us-east1-d --project th-kidusmamuye
+  932  kubectl logs thenodejs-6b466d9cdd-xpk4l -n devops-final
+  933  kubectl get pods -n devops-final
+  934  kubectl logs thenodejs-6b466d9cdd-xpk4l -n devops-final
+  935  kubectl get pods -n devops-final
+  936  kubectl logs thenodejs-6b466d9cdd-xpk4l -n devops-final
+  937  kubectl get deployments
+  938  kubectl get ns
+  939  git clone http://git.gebeya.com/devops/hello-app.git
+  940  kubectl get deployment -n devops-final
+  941  ls
+  942  cd k8s/
+  943  ls
+  944  cd thenodejs/
+  945  ls
+  946  vi deployment-staging.yaml 
+  947  history
+  948  create -f deployment-staging.yaml -n devops-final
+  949  kubectl create -f deployment-staging.yaml -n devops-final
+  950  kubectl get deployment
+  951  kubectl get deployment -n devops-final
+  952  kubectl delete thenodejs -n devops-final
+  953  kubectl delete deployment thenodejs -n devops-final
+  954  kubectl create -f deployment-staging.yaml -n devops-final
+  955  kubectl get deployment -n devops
+  956  kubectl get deployment -n devops-final
+  957  kubectl get pods -n devops-final
+  958  kubectl get svc -n devops-final
+  959  cd ..
+  960  d ..
+  961  ls
+  962  cd ..
+  963  ls
+  964  cd sewoch_api/
+  965  ls
+  966  cp sample-ingress.yaml ../thenodejs/
+  967  ls
+  968  cd ..
+  969  ls
+  970  cd thenodejs/
+  971  ls
+  972  cat sample-ingress.yaml 
+  973  vi sample-ingress.yaml 
+  974  ls
+  975  cat sample-ingress.yaml 
+  976  kubectl get svc -n devops-final
+  977  kubectl create -f sample-ingress.yaml -n devops-final
+  978  kubectl get pods -n jenkins
+  979  kubectl get svc -n devops-final
+  980  kubectl get ingress -n devlops-final
+  981  kubectl get ingress -n devops-final
+  982  kubectl get ingress -n deveops-final
+  983  kubectl get ingress -n devops-final
+  984  kubectl get svc -n devops-final
+  985  kubectl describe svc -n devops-final
+  986  kubectl describe deployment -n devops-final
+  987  kubectl get pods -n devops-final
+  988  kubectl logs thenodejs-5c9455778f-nzb4g -n devops-final
+  989  kubectl get ingress -n devops-final
+  990  kubectl get pods -n jenkins
+  991  kubectl get pods -n devops-final
+  992  ls
+  993  cd thenodejs/
+  994  ls
+  995  cat sample-ingress.yaml 
+  996  ls
+  997  curl 10.128.0.15:8011
+  998  history
+  999  kubectl get ingress -n devops-final
+ 1000  curl 10.128.0.15:8011
+ 1001  ls
+ 1002  ls -la
+ 1003  history
+ 1004  bh
+ 1005  echo history
+ 1006  history >> gcloud-history.txt
