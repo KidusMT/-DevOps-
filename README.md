@@ -20,7 +20,7 @@ The text file in the repository is the terminal history of the project I have be
   - [codemagic - for all mobile platforms](https://codemagic.io/start/)
   - [appcenterms - for all mobile platforms](http://appcenter.ms/)
 
-For automatic version increment on every push from stackoverflow [answer](https://stackoverflow.com/a/57879685/6021740) from [Andre Cytryn](https://stackoverflow.com/users/1165337/andre-cytryn)
+For automatic version increment on every push from stackoverflow [answer](https://stackoverflow.com/a/57879685/6021740) from [Andre Cytryn](https://stackoverflow.com/users/1165337/andre-cytryn)</br>
 From Codemagic [documentation][1] they show you a few options:
 
 ```
