@@ -15,3 +15,7 @@ The text file in the repository is the terminal history of the project I have be
   - Helm
   - Docker
   - Mongodb
+
+## Best DevOps CI/CD tools:
+  - [codemagic - for all mobile platforms](https://codemagic.io/start/)
+  - [appcenterms - for all mobile platforms](http://appcenter.ms/)
