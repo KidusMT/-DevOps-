@@ -44,3 +44,7 @@ Add it here:
 
   [1]: https://docs.codemagic.io/building/build-versioning/
   [2]: https://i.stack.imgur.com/MU7we.png
+  
+## Kubernetes K8s
+ - [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/docs/how-to/?utm_source=ft-always-on&utm_medium=email&utm_campaign=2018-FT-always-on-GKE2B-en&utm_content=ft-en)
+ - [Google Codelabs](https://codelabs.developers.google.com/?filter=app%20engine&utm_source=always-on&utm_medium=email&utm_campaign=2019-FT-always-on-appengine-2a&utm_content=en)
